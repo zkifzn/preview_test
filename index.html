@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Invitation to The Hidden</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<style>
+    .thumbnail {
+      cursor: pointer;
+      transition: transform 0.4s;
+    }
+
+    .thumbnail:hover {
+      transform: scale(1.05);
+    }
+
+    /* Container popup kecil */
+    .popup {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      padding: 15px;
+      max-width: 90%;
+      width: 370px;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+
+    .popup.show {
+      opacity: 1;
+      pointer-events: auto;
+      position: fixed;
+      transform: translate(-50%, -50%) scale(2);
+    }
+
+    .popup img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #d4d3d3;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #8a8a8a;
+      transition: transform 0.6s ease, opacity 0.3s ease;
+    }
+
+    /* ==== Responsive untuk Mobile ==== */
+    @media (max-width: 600px) {
+        .thumbnail {
+      cursor: pointer;
+      transition: transform 0.4s;
+    }
+
+    .thumbnail:hover {
+      transform: scale(1.05);
+    }
+
+    /* Container popup kecil */
+    .popup {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      padding: 15px;
+      max-width: 40%;
+      width: 370px;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+
+    .popup.show {
+      opacity: 1;
+      pointer-events: auto;
+      position: fixed;
+      transform: translate(-50%, -50%) scale(2);
+    }
+
+    .popup img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #d4d3d3;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #8a8a8a;
+      transition: transform 0.6s ease, opacity 0.3s ease;
+    }
+    }
+
+    @media (max-width: 300px) {
+        .thumbnail {
+      cursor: pointer;
+      transition: transform 0.4s;
+    }
+
+    .thumbnail:hover {
+      transform: scale(1.05);
+    }
+
+    /* Container popup kecil */
+    .popup {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      padding: 15px;
+      max-width: 40%;
+      width: 370px;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+
+    .popup.show {
+      opacity: 1;
+      pointer-events: auto;
+      position: fixed;
+      transform: translate(-50%, -50%) scale(2);
+    }
+
+    .popup img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #d4d3d3;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #8a8a8a;
+      transition: transform 0.6s ease, opacity 0.3s ease;
+    }
+    }
+  </style>
+
+<body>
+
+    <main class="container">
+        <header class="header">
+            <h1 class="main-title">AN INVITATION<br>TO THE HIDDEN</h1>
+        </header>
+
+        <section class="intro-section">
+            <div class="intro-details">
+                <div class="detail-item">
+                    <span class="label">CURATED SELECTION OF</span>
+                    <h2 class="value">FINE SPIRITS</h2>
+                </div>
+                <div class="detail-item">
+                    <span class="label">A HIDDEN GEM</span>
+                    <h2 class="value">7 NIGHTS / WEEK</h2>
+                </div>
+                <div class="detail-item-description">
+                    <p class="intro-description">
+                        Step into a place where time slows down and the night feels endless. Our speakeasy offers a unique, intimate atmosphere, perfect for those seeking something more than the usual. Come for the experience, stay for the vibe.
+                    </p>
+                </div>
+            </div>
+            <div class="intro-image-wrapper">
+                <img src="assets/img/image_main.png" alt="Gambar intro" class="intro-image">
+            </div>
+        </section>
+
+        <section class="behind-section">
+            <h2 class="section-title">BEHIND</h2>
+            <h3 class="section-subtitle">Closed Doors</h3>
+            <p class="description">
+                Our speakeasy offers an atmosphere that's both sleek and relaxed, perfect for those who appreciate the finer things in life. Whether you're here for a quiet drink or to linger into the night, every moment feels exclusive.
+            </p>
+        </section>
+
+        <section class="gallery-section">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/img/image_gallery_1.png" alt="Gambar gallery 1" class="thumbnail popup-trigger">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/image_gallery_2.png" alt="Gambar gallery 2" class="thumbnail popup-trigger">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/image_gallery_3.png" alt="Gambar gallery 3" class="thumbnail popup-trigger">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/image_gallery_4.png" alt="Gambar gallery 4" class="thumbnail popup-trigger">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/image_gallery_5.png" alt="Gambar gallery 5" class="thumbnail popup-trigger">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/img/image_gallery_6.png" alt="Gambar gallery 6" class="thumbnail popup-trigger">
+                </div>
+            </div>
+
+            <div id="popupCard" class="popup">
+                <span class="close" id="closeBtn">&times;</span>
+                <img id="popupImage" src="" alt="Popup Besar">
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            <button class="cta-button">
+                GUESTLIST
+            </button>
+        </footer>
+    </main>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    const popup = document.getElementById("popupCard");
+    const popupImg = document.getElementById("popupImage");
+    const closeBtn = document.getElementById("closeBtn");
+    const triggers = document.querySelectorAll(".popup-trigger");
+
+    function hidePopup() {
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          popup.classList.remove("show");
+          popup.classList.remove("hiding");
+          popup.style.top = "";
+          popup.style.left = "";
+        }, 150);
+      });
+    }
+    
+    triggers.forEach(img => {
+      img.addEventListener("click", () => {
+        // Deteksi jika mobile, jangan tampilkan popup
+        if (window.innerWidth <= 600) {
+          // Untuk desktop: tampilkan gambar
+          popupImg.src = img.src;
+      
+        //   const rect = img.getBoundingClientRect();
+        //   const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        //   const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+      
+          popup.style.top = "450px";
+          popup.style.left = "240px";
+
+        //   popup.style.top = (scrollTop + 500) + "px";
+        //   popup.style.left = (scrollLeft + 1000) + "px";
+      
+          popup.classList.add("show");
+        }else if (window.innerWidth <= 300) {
+          // Untuk desktop: tampilkan gambar
+          popupImg.src = img.src;
+      
+        //   const rect = img.getBoundingClientRect();
+        //   const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        //   const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+      
+          popup.style.top = "450px";
+          popup.style.left = "1000px";
+
+        //   popup.style.top = (scrollTop + 500) + "px";
+        //   popup.style.left = (scrollLeft + 1000) + "px";
+      
+          popup.classList.add("show");
+        }else{
+          // Untuk desktop: tampilkan gambar
+          popupImg.src = img.src;
+      
+        //   const rect = img.getBoundingClientRect();
+        //   const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        //   const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+      
+          popup.style.top = "500px";
+          popup.style.left = "1000px";
+
+        //   popup.style.top = (scrollTop + 500) + "px";
+        //   popup.style.left = (scrollLeft + 1000) + "px";
+      
+          popup.classList.add("show");
+        }
+      });
+    });
+
+    // Tutup lewat tombol
+    closeBtn.onclick = hidePopup;
+    
+    // Tutup saat klik luar popup
+    window.onclick = function (event) {
+      if (!popup.contains(event.target) && !event.target.classList.contains("popup-trigger")) {
+        hidePopup();
+      }
+    };
+  </script>
